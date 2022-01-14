@@ -45,16 +45,15 @@ terraform apply
 ```
 
 ### Kubernetes Cluster setup
-After the terraform process has been completed. The Terraform command will provide the join token that will be used to attach worker nodes to the master node.
+1. After the terraform process has been completed. The Terraform command will provide the join token that will be used to attach worker nodes to the master node.
 ```bash
 EXAMPLE: 
 sudo kubeadm join IP-ADDRESS:PORT --token
 --discovery-token-ca-cert-hash sha256:
 ```
-Copy the Join Token.
-SSH into the Worker Nodes and Enter the Join Token using root (sudo).
-Go back to Master node and enter "kubectl get nodes".
-If the worker nodes are successfully joined, the above command should show all the worker node along with the master node in "Ready" state.
+2. Copy the Join Token.
+3. SSH into the Worker Nodes and Enter the Join Token using root (sudo).
+4. Go back to Master node and enter "kubectl get nodes". If the worker nodes are successfully joined, the above command should show all the worker node along with the master node in "Ready" state.
 
 ### AWS 
 1. Go to AWS, and search for EC2
